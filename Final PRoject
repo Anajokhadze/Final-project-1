@@ -1,0 +1,57 @@
+class AbstractSubject{
+    protected: 
+        string SubjectName;
+        string CourseDuration;
+        string StartDate;
+        
+        
+    AbstractSubject(string SubjectName, string CourseDuration, string StartDate){
+        this -> SubjectName = SubjectName;
+        this -> CourseDuration = CourseDuration;
+        this -> StartDate = StartDate;
+    }
+    
+    string getSubjectName() {
+        return SubjectName;
+    }
+    
+    void setSubjectName(string SubjectName){
+        this -> SubjectName = SubjectName;
+    }
+    
+    string getCourseDuration () {
+        return CourseDuration;
+    }
+    
+    void setCouseDuration (string CourseDuration){
+        this -> CourseDuration = CourseDuration;
+    }
+    
+    string getStartDate(){
+        return StartDate;
+    }
+    
+    void setStartDate( string StartDate){
+        this -> StartDate = StartDate;
+    }
+    
+};
+
+class SkillwillSubject : public AbstractSubject {
+    public:
+    SkillwillSubject(string SubjectName, string CourseDuration, string StartDate): AbstractSubject (SubjectName, CourseDuration, StartDate){};
+    void subjectDescr(){
+        cout << "This subject is " << SubjectName << endl;
+        cout << "Duration of the course: "<< CourseDuration << endl;
+        cout << "And the start date is: "<<StartDate<< endl;
+        
+    }
+};
+
+int main()
+{
+    SkillwillSubject subject("Math", "3 Weeks", "1st September");
+    subject.subjectDescr();
+
+    return 0;
+}
